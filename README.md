@@ -1,2 +1,3 @@
 # PicoMandelbrot
  
+![Screenshot](/screenshot.jpg)
