@@ -54,11 +54,6 @@ def main():
     (mBitmap, mTileGrid) = SetupTileGrid()
     mGroup.append(mTileGrid) #add the TileGrid to the group
 
-    RE_START = -1.5 #-2
-    RE_END = -1 #1
-    IM_START = -.25 #-1
-    IM_END = .25 #1
-
     xOffset = -0.8
     RE_START = -2 + xOffset
     RE_END = 2 + xOffset
