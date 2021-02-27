@@ -124,7 +124,7 @@ def main():
 
     def ZoomIn(display, bitmap):
         if (buttonZoomIn.value == False):
-            print("BEFORE:",realStart, realEnd, imStart, imEnd)
+            print("BEFORE ZOOM IN:",realStart, realEnd, imStart, imEnd)
             x0 = getCursorX(mPot0)
             y0 = getCursorY(mPot1)
             z = getZoomLevel(mZoomPot)
@@ -144,7 +144,7 @@ def main():
 
     def ZoomOut(display, bitmap):
         if (buttonZoomOut.value == False):
-            print("BEFORE:",realStart, realEnd, imStart, imEnd)
+            print("BEFORE ZOOM OUT:",realStart, realEnd, imStart, imEnd)
             zoomDelta = 2
             realRange, imRange = realEnd-realStart, imEnd-imStart
             realDelta, imDelta = realRange/zoomDelta, imRange/zoomDelta
@@ -157,15 +157,18 @@ def main():
             print("AFTER:",realStart, realEnd, imStart, imEnd)
             DrawMandelbrot(display, bitmap)
 
-
     def Center(display, bitmap):
         if (buttonCenter.value == False):
-            print("BEFORE:",realStart, realEnd, imStart, imEnd)
+            print("BEFORE CENTER:",realStart, realEnd, imStart, imEnd)
             realRange, imRange  = realEnd-realStart, imEnd-imStart
+            print("Ranges:",realRange, imRange)
             width2, height2 = WIDTH/2, HEIGHT/2
             xDelta = getCursorX(mPot0) - width2
-            yDelta = getCursorX(mPot1) - height2
+            yDelta = getCursorY(mPot1) - height2
+            print("Cursors:",getCursorX(mPot0) , getCursorY(mPot1) )
+            print("Screen Deltas:",xDelta, yDelta)
             realDelta, imDelta = (realRange*xDelta/WIDTH), (imRange*yDelta/HEIGHT)
+            print("Mandel Deltas:",realDelta, imDelta)
             realStart = realStart + realDelta
             realEnd = realEnd + realDelta
             imStart = imStart + imDelta
